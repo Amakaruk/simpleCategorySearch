@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Category Search</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Search Product Category</h1>
+        <input type="text" id="searchInput" placeholder="Search for a category..." onkeyup="showSuggestions(this.value)">
+        <div id="autocompleteSuggestions"></div>
+    </div>
+
+    <div id="resultsContainer" style="display: none;">
+        <h2>Search Results</h2>
+        <ul id="resultsList"></ul>
+        <button onclick="goBack()">Back to Search</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
