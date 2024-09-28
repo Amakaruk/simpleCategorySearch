@@ -68,3 +68,35 @@ if ('serviceWorker' in navigator) {
         });
     });
 }
+
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+    // Prevent the default mini-infobar from appearing
+    e.preventDefault();
+    // Store the event so it can be triggered later
+    deferredPrompt = e;
+    
+    // Show the install button or any UI to promote the PWA installation
+    const installButton = document.getElementById('installButton');
+    installButton.style.display = 'block';  // Make the button visible
+});
+
+// When the user clicks the "Install" button
+document.getElementById('installButton').addEventListener('click', async () => {
+    if (deferredPrompt) {
+        // Show the install prompt
+        deferredPrompt.prompt();
+        // Wait for the user to respond to the prompt
+        const { outcome } = await deferredPrompt.userChoice;
+        if (outcome === 'accepted') {
+            console.log('User accepted the install prompt');
+        } else {
+            console.log('User dismissed the install prompt');
+        }
+        // Reset the deferred prompt variable
+        deferredPrompt = null;
+        // Hide the install button
+        document.getElementById('installButton').style.display = 'none';
+    }
+});
