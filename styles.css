@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+#autocompleteSuggestions {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    max-width: 100%;
+    cursor: pointer;
+    text-align: left;
+    padding: 10px;
+}
+
+#autocompleteSuggestions div:hover {
+    background-color: #eee;
+}
+
+#resultsContainer {
+    display: none;
+}
+
+#resultsList {
+    list-style-type: none;
+    padding: 0;
+    font-size: 1.2em;
+}
+
+#resultsList li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
