@@ -59,7 +59,7 @@ function goBack() {
 
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js')
+        navigator.serviceWorker.register('/simpleCategorySearch/service-worker.js')
         .then(registration => {
             console.log('Service Worker registered with scope:', registration.scope);
         })

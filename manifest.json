@@ -1,7 +1,7 @@
 {
     "name": "Product Category Search",
     "short_name": "Product Search",
-    "start_url": "/",
+    "start_url": "/simpleCategorySearch/",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#000000",
